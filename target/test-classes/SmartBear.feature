@@ -8,4 +8,3 @@ Feature:  There will be SmartBear Website Scenarios
     Then The user wants to delete all selected orders
     And The user wants to logout
 
- 
