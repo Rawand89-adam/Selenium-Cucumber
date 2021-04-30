@@ -54,6 +54,7 @@ public class Steps extends BrowserUtils {
         driver.findElement(By.id("ctl00_logout")).click();
         wait(2);
 
+        Driver.tearDown();
 
     }
 
@@ -99,6 +100,7 @@ public class Steps extends BrowserUtils {
         WebElement updateButton = driver.findElement(By.xpath("//a[contains(text(),'Update')]"));
         wait(1);
         updateButton.click();
+        wait(1);
 
     }
 

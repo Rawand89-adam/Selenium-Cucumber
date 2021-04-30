@@ -17,7 +17,13 @@ public class Driver {
     }
 
 
-     // We will be back at 8:05 pm
+     public static void tearDown(){
+
+       if(driver != null){
+           driver.quit();
+       }
+
+     }
 
 
 
