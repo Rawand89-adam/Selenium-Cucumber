@@ -76,6 +76,29 @@ public class Steps extends BrowserUtils {
         wait(2);
 
 
+    }
+
+    @When("The user wants edit first order")
+    public void the_user_wants_edit_first_order() {
+
+        WebElement firstOrder = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr[2]/td[13]/input"));
+        wait(2);
+        firstOrder.click();
+    }
+    @Then("The user wants to update Card number as {string}")
+    public void the_user_wants_to_update_card_number_as(String cardNum) {
+        WebElement cardNumber = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
+        wait(2);
+        cardNumber.clear();
+        cardNumber.sendKeys(cardNum);
+        wait(2);
+    }
+    @Then("The user wants to update order")
+    public void the_user_wants_to_update_order() {
+
+        WebElement updateButton = driver.findElement(By.xpath("//a[contains(text(),'Update')]"));
+        wait(1);
+        updateButton.click();
 
     }
 

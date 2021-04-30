@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources",
         glue = "/renastech/stepsDefinitions",
-        dryRun=false,
-        tags = "@TC_2"
+        dryRun=true,
+        tags = "@TC_3"
 
 
 )
