@@ -3,10 +3,14 @@ package renastech.stepsDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import renastech.utils.BrowserUtils;
 import renastech.utils.Driver;
+
+import java.util.Map;
 
 public class Steps extends BrowserUtils {
 
@@ -103,6 +107,81 @@ public class Steps extends BrowserUtils {
         wait(1);
 
     }
+
+
+    @When("The user wants to order")
+    public void the_user_wants_to_order() {
+
+        wait(1);
+        driver.findElement(By.xpath("//a[.='Order']")).click();
+        wait(1);
+
+    }
+    @Then("The user wants to product as {string}")
+    public void the_user_wants_to_product_as(String familyAlbum) {
+
+        WebElement selectDropdown =driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
+        Select select = new Select(selectDropdown);
+        select.selectByVisibleText(familyAlbum);
+     //   select.selectByIndex(2);
+        wait(2);
+    }
+    @Then("The user wants to buy {string}")
+    public void the_user_wants_to_buy(String product) {
+
+        WebElement quantity= driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantity.sendKeys(product);
+        wait(1);
+
+
+    }
+    @Then("The user wants to calculate total")
+    public void the_user_wants_to_calculate_total() {
+        driver.findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_txtTotal']/following-sibling::input")).click();
+        wait(1);
+    }
+    @Then("The user wants to verify total {int} and {string}")
+    public void the_user_wants_to_verify_total_and(Integer quantity, String product) {
+
+        int discount;
+        WebElement totalAmount = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtTotal"));
+        String actualTotal = totalAmount.getText();
+        switch (product){
+
+            case "FamilyAlbum":
+              int total = quantity*80;
+              discount = total*15/100;
+              total = total-discount;
+              Assert.assertEquals(total,actualTotal);
+              break;
+            case "MyMoney":
+              break;
+            case "ScreenSaver":
+                break;
+            default:
+        }
+
+    }
+
+
+    @Then("The user wants to enter")
+    public void the_user_wants_to_enter(Map<String,String> productTable) {
+
+        productTable.get("product");
+
+        WebElement selectDropdown =driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
+        Select select = new Select(selectDropdown);
+        select.selectByVisibleText(productTable.get("product"));
+        System.out.println("It should print " + productTable.get("product"));
+        //   select.selectByIndex(2);
+        wait(2);
+
+        WebElement quantity= driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantity.sendKeys(productTable.get("quantity"));
+        System.out.println("This Quant   "+quantity);
+        wait(1);
+    }
+
 
 
 }
