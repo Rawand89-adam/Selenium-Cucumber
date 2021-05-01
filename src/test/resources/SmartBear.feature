@@ -68,7 +68,18 @@ Feature:  There will be SmartBear Website Scenarios
             |Name    | Erkan     |
           Then The user wants to enter address information as
             |CustomerName| Erez       |
-            | Street     |1234 Fake St|
+            |Street      |1234 Fake St|
             |City        | Baltimore  |
             |State       | Virginia   |
             |ZipCode     | 123456     |
+
+
+
+
+
+
+
+          ### Write the last step fpr Payment option in a data table
+           # add the last scenario
+
+

@@ -167,7 +167,7 @@ public class Steps extends BrowserUtils {
     @Then("The user wants to enter")
     public void the_user_wants_to_enter(Map<String,String> productTable) {
 
-        productTable.get("product");
+
 
         WebElement selectDropdown =driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
         Select select = new Select(selectDropdown);
@@ -181,6 +181,32 @@ public class Steps extends BrowserUtils {
         System.out.println("This Quant   "+quantity);
         wait(1);
     }
+
+    @Then("The user wants to enter address information as")
+    public void the_user_wants_to_enter_address_information_as(Map<String,String> addressInfo) {
+
+        WebElement customerName = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
+        WebElement streetName = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
+        WebElement cityName = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox3"));
+        WebElement stateName = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4"));
+        WebElement zipCode = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
+
+        customerName.sendKeys(addressInfo.get("CustomerName"));
+        wait(1);
+        streetName.sendKeys(addressInfo.get("Street"));
+        wait(1);
+        cityName.sendKeys(addressInfo.get("City"));
+        wait(1);
+        stateName.sendKeys(addressInfo.get("State"));
+        wait(1);
+        zipCode.sendKeys(addressInfo.get("ZipCode"));
+        wait(1);
+
+
+
+
+    }
+
 
 
 

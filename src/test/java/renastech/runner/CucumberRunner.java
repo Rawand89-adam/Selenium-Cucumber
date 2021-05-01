@@ -11,29 +11,11 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "/renastech/stepsDefinitions",
         dryRun=false,  //When it is false it is inactive
-        tags = "@TC_5"
+        tags = "@TC_6"
 
 
 )
 public class CucumberRunner {
-
-
-    // Feature file
-    // runner Class
-    // steps Definition
-    // utils pack ( Browserutils, Driver)
-    // Pom.Xml
-
-    //And finaly run one test case we run in class,
-    // make sure framework is running
-
-
-
-
-
-
-
-
 
 
 }

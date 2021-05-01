@@ -51,8 +51,26 @@ Feature:  There will be SmartBear Website Scenarios
       Scenario: Verify that the total is correct for FamilyAlbum
         When The user wants to order
         Then The user wants to enter
-        |product |FamilyAlbum|
-        |quantity| 10        |
+         |product |FamilyAlbum|
+         |quantity| 30        |
+         |Price   | 50        |
+         |Name    | Erkan     |
         And The user wants to calculate total
+
+
+        @TC_6
+        Scenario: Verify that the total is correct for FamilyAlbum
+          When The user wants to order
+          Then The user wants to enter
+            |product |FamilyAlbum|
+            |quantity| 30        |
+            |Price   | 50        |
+            |Name    | Erkan     |
+          Then The user wants to enter address information as
+            |CustomerName| Erez       |
+            |Street      |1234 Fake St|
+            |City        | Baltimore  |
+            |State       | Virginia   |
+            |ZipCode     | 123456     |
 
 
