@@ -73,6 +73,7 @@ public class Addresses extends BrowserUtils {
         age.sendKeys(age1);
 
 
+        waitEnterText(age,age1);
 
 
     }
