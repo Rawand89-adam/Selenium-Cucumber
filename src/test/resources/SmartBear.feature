@@ -120,12 +120,15 @@ Feature:  There will be SmartBear Website Scenarios
 
        #Username erk@gmail.com
        #Password erk@gmail.com
+
+    @TC_9
     Scenario: Create new address
       Given The user wants to login
       Then The user wants to see addresses
       And The user wants to enter new address
 
-      # try for 10 min
+
+
 
 
 

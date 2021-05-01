@@ -110,13 +110,25 @@ Feature:  There will be SmartBear Website Scenarios
      Given The user wants to login with username as "Tester" and password as "test"
      When The user wants to order
      Then The user wants to enter list
-      |product    |quantity   |Price     |Name    |
-      |FamilyAlbum| 30        |50        |Erkan   |
+     |product    |quantity   |Price     |Name    |   #0
+     |FamilyAlbum| 30        |50        |Erkan   |   #1
+     |FamilyAlbum| 30        |50        |Erkan   |   #2
+     |FamilyAlbum| 30        |50        |Erkan   |   #3
+     |FamilyAlbum| 30        |50        |Erkan   |   #4
      And The user wants to calculate total
 
 
-#             // Break till 11:02
-#                        International labour day
+       #Username erk@gmail.com
+       #Password erk@gmail.com
+
+    @TC_9
+    Scenario: Create new address
+      Given The user wants to login
+      Then The user wants to see addresses
+      And The user wants to enter new address
+
+
+
 
 
 
