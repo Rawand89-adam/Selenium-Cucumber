@@ -10,14 +10,14 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources",
         glue = "/renastech/stepsDefinitions",
-        dryRun=true,  //When it is false it is inactive
+        dryRun=false,  //When it is false it is inactive
         tags = "@TC_10"
 
 
 )
 public class CucumberRunner {
 
-    //Hooks
+
 
 
 }

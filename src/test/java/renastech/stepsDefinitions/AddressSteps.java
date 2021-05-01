@@ -44,11 +44,21 @@ public class AddressSteps extends BrowserUtils {
         addresses.setFirstName(addressInfo.get("FirstName"));
         addresses.setLastname(addressInfo.get("LastName"));
         addresses.setAddress1(addressInfo.get("Address1"));
+        addresses.setAddress2(addressInfo.get("Address2"));
+        addresses.setCity(addressInfo.get("City"));
+        addresses.setState(addressInfo.get("State"));
+        addresses.setZipcode(addressInfo.get("ZipCode"));
+        addresses.setCountry(addressInfo.get("Country"));
+        addresses.setBirthday(addressInfo.get("Birthday"));
+        addresses.setAge(addressInfo.get("Age"));
+
+
 
     }
     @Then("The user wants to create an address")
     public void the_user_wants_to_create_an_address() {
-
+        Addresses addresses = new Addresses();
+        addresses.clickSubmitButton();
 
     }
 

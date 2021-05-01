@@ -112,7 +112,7 @@ Feature:  There will be SmartBear Website Scenarios
      Then The user wants to enter list
      |product    |quantity   |Price     |Name    |   #0
      |FamilyAlbum| 30        |50        |Erkan   |   #1
-     |FamilyAlbum| 30        |50        |Erkan   |   #2
+     |FamilyAlbum2| 300        |40        |Erkan   |   #2
      |FamilyAlbum| 30        |50        |Erkan   |   #3
      |FamilyAlbum| 30        |50        |Erkan   |   #4
      And The user wants to calculate total
