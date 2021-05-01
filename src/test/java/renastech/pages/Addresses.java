@@ -1,5 +1,6 @@
 package renastech.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -48,31 +49,37 @@ public class Addresses extends BrowserUtils {
     private WebElement submitButton;
 
     public void clickSubmitButton(){
-        wait(1);
+        staticWait(1);
         submitButton.click();
     }
 
     public void setZipcode(String zipcodeName){
-        wait(1);
+        staticWait(1);
         zipcode.sendKeys(zipcodeName);
     }
     public void setCountry(String countryName){
-        wait(1);
-        country.click();
+//        staticWait(1);
+//        country.click();
+
+        clickAndWait(country);
     }
 
     public void setBirthday(String birthdayDate){
-        wait(1);
+        staticWait(1);
         birthday.sendKeys(birthdayDate);
     }
     public void setAge(String age1){
-        wait(1);
+        staticWait(1);
         age.sendKeys(age1);
+
+
+
+
     }
 
 
     public void setState(String stateName){
-        wait(1);
+        staticWait(1);
         Select select = new Select(state);
         select.selectByVisibleText(stateName);
 
@@ -81,26 +88,26 @@ public class Addresses extends BrowserUtils {
 
 
     public void setCity(String cityName){
-        wait(1);
+        staticWait(1);
         city.sendKeys(cityName);
     }
     public void setFirstName(String name){
-        wait(1);
+        staticWait(1);
         firstName.sendKeys(name);
     }
 
     public void setLastname(String lastName){
-        wait(1);
+        staticWait(1);
         lastname.sendKeys(lastName);
     }
 
     public void setAddress1(String address){
-        wait(1);
+        staticWait(1);
         address1.sendKeys(address);
     }
 
     public void setAddress2(String address){
-        wait(1);
+        staticWait(1);
         address2.sendKeys(address);
     }
 

@@ -150,8 +150,16 @@ Feature:  There will be SmartBear Website Scenarios
         |Note         | This is my fake address|
         And The user wants to create an address
 
-           #   Task ======  two minute
-           # Create TC_10  Scenario as a list style
+  @TC_11
+  Scenario: Enter all address fields
+    Given The user wants to login
+    Then The user wants to see addresses
+    And The user wants to enter new address
+    And The user wants to enter address details as list
+      |FirstName |LastName  |Address1  |Address2   |City      |State     |ZipCode   |Country    |
+      | erkn     |ozcl      |11 fake st|12 fake st |Toronto   |Colorado  |86500     | Canada    |
+    And The user wants to create an address
+
 
 
 
