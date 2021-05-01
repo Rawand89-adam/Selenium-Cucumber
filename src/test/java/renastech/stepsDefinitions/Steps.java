@@ -3,6 +3,7 @@ package renastech.stepsDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import renastech.utils.BrowserUtils;
 import renastech.utils.Driver;
 
+import java.util.List;
 import java.util.Map;
 
 public class Steps extends BrowserUtils {
@@ -201,6 +203,67 @@ public class Steps extends BrowserUtils {
         wait(1);
         zipCode.sendKeys(addressInfo.get("ZipCode"));
         wait(1);
+
+
+
+
+    }
+
+    @Then("The user wants to enter payment information")
+    public void the_user_wants_to_enter_payment_information(Map<String,String > payInfo) {
+
+        // We are selecting Card type
+        switch (payInfo.get("Card")){
+
+            case "visa":
+                wait(1);
+                driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0")).click();
+                break;
+            case "MasterCard":
+                wait(1);
+                driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1")).click();
+                break;
+            case "American Express":
+                wait(1);
+                driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_2")).click();
+                break;
+            default:
+        }
+
+        // Enter card number
+        wait(2);
+        WebElement cardNumber = driver.findElement(By.xpath("//input[@name='ctl00$MainContent$fmwOrder$TextBox6']"));
+        cardNumber.clear();
+        cardNumber.sendKeys(payInfo.get("CardNumber"));
+
+        // Enter expire date
+        wait(2);
+        WebElement expireDate = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
+        expireDate.clear();
+        expireDate.sendKeys(payInfo.get("ExpireDate"));
+
+
+
+    }
+    @Then("The user wants finish the process")
+    public void the_user_wants_finish_the_process() {
+        wait(1);
+        driver.findElement(By.xpath("//a[contains(text(),'Process')]")).click();
+        wait(1);
+    }
+
+    @Then("The user wants to enter list")
+    public void the_user_wants_to_enter_list(List<List<String>> listOfProduct) {
+
+        WebElement selectElem = driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
+        Select select = new Select(selectElem);
+        select.selectByVisibleText(listOfProduct.get(1).get(0));
+
+
+
+        wait(1);
+        WebElement quantity = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantity.sendKeys(listOfProduct.get(1).get(1));
 
 
 

@@ -9,7 +9,7 @@ Feature:  There will be SmartBear Website Scenarios
 #
 
   Background:
-    Given The user wants to login with username as "Tester" and password as "test"
+#    Given The user wants to login with username as "Tester" and password as "test"
 
 
 
@@ -72,5 +72,63 @@ Feature:  There will be SmartBear Website Scenarios
             |City        | Baltimore  |
             |State       | Virginia   |
             |ZipCode     | 123456     |
+
+
+
+
+
+
+
+           # Write the last step fpr Payment option in a data table
+           # add the last scenario
+
+  @TC_7
+  Scenario: Verify that the total is correct for FamilyAlbum
+    When The user wants to order
+    Then The user wants to enter
+      |product |FamilyAlbum|
+      |quantity| 30        |
+      |Price   | 50        |
+      |Name    | Erkan     |
+    Then The user wants to enter address information as
+      |CustomerName| Erez       |
+      |Street      |1234 Fake St|
+      |City        | Baltimore  |
+      |State       | Virginia   |
+      |ZipCode     | 123456     |
+    Then The user wants to enter payment information
+      |Card      | visa          |
+      |CardNumber| 12345678965466|
+      |ExpireDate| 12/27         |
+    And The user wants finish the process
+    And The user wants to logout
+
+
+
+  @TC_8
+  Scenario: Verify that the total is correct for FamilyAlbum
+     Given The user wants to login with username as "Tester" and password as "test"
+     When The user wants to order
+     Then The user wants to enter list
+      |product    |quantity   |Price     |Name    |
+      |FamilyAlbum| 30        |50        |Erkan   |
+     And The user wants to calculate total
+
+
+#             // Break till 11:02
+#                        International labour day
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
