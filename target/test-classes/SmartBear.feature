@@ -128,6 +128,29 @@ Feature:  There will be SmartBear Website Scenarios
       And The user wants to enter new address
 
 
+         @TC_10
+      Scenario: Enter all address fields
+        Given The user wants to login
+        Then The user wants to see addresses
+        And The user wants to enter new address
+        And The user wants to enter address details
+        |FirstName | erkn|
+        |LastName  | ozcl|
+        |Address1  | 11 fake st|
+        |Address2  |12 fake st |
+        |City      | Toronto   |
+        |State     | Colorado  |
+        |ZipCode   | 86500     |
+        |Country   | Canada    |
+        |Birthday  | 12/12/1990|
+        |Age       |19         |
+        |Website   | www.erkan |
+        |phone     | 49595959  |
+        |commonIntrest|Dancing |
+        |Note         | This is my fake address|
+        And The user wants to create an address
+
+
 
 
 
