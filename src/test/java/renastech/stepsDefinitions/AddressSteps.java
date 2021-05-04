@@ -24,6 +24,11 @@ public class AddressSteps extends BrowserUtils {
         driver.findElement(By.xpath("//input[@name='commit']")).click();
         staticWait(1);
     }
+
+
+
+
+
     @Then("The user wants to see addresses")
     public void the_user_wants_to_see_addresses() {
 

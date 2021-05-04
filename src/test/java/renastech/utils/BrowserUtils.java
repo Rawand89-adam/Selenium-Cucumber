@@ -23,7 +23,7 @@ public class BrowserUtils extends Driver {
     }
 
 
-    public static WebDriverWait wait = new WebDriverWait(driver,30);
+    public static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
 
     public static void clickAndWait(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();

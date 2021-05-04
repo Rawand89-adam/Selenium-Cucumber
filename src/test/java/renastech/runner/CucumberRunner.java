@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "/renastech/stepsDefinitions",
         dryRun=false,  //When it is false it is inactive
-        tags = "@TC_11"
+        tags = "@TC_12"
 
 
 )

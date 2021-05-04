@@ -162,6 +162,10 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
+  @TC_12
+  Scenario: Enter all address fields
+    Given The user wants to login abc
+
 
 
 
