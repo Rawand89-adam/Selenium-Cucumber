@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import renastech.pages.Addresses;
 import renastech.utils.BrowserUtils;
+import renastech.utils.ConfigurationsReader;
 import renastech.utils.Driver;
 
 import java.util.List;
@@ -17,9 +18,11 @@ public class AddressSteps extends BrowserUtils {
         Driver.getDriver();
         driver.manage().window().maximize();
         driver.get("http://a.testaddressbook.com/sign_in");
-        driver.findElement(By.id("session_email")).sendKeys("erk@gmail.com");
+       // driver.findElement(By.id("session_email")).sendKeys("erk@gmail.com");
+        driver.findElement(By.id("session_email")).sendKeys(ConfigurationsReader.getProperties("username"));
         staticWait(1);
-        driver.findElement(By.id("session_password")).sendKeys("erk@gmail.com");
+      //  driver.findElement(By.id("session_password")).sendKeys("erk@gmail.com");
+        driver.findElement(By.id("session_password")).sendKeys(ConfigurationsReader.getProperties("password"));
         staticWait(1);
         driver.findElement(By.xpath("//input[@name='commit']")).click();
         staticWait(1);

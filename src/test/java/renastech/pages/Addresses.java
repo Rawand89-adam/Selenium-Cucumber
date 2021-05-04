@@ -102,6 +102,7 @@ public class Addresses extends BrowserUtils {
         lastname.sendKeys(lastName);
     }
 
+
     public void setAddress1(String address){
         staticWait(1);
         address1.sendKeys(address);
@@ -113,24 +114,5 @@ public class Addresses extends BrowserUtils {
     }
 
 
-
-
-
-
-
-
-
-//       age =      address_age
-//    website= address_website
-//    phone= address_phone
-//
-//common=
-//    address_interest_dance
-//            address_interest_climb
-//    address_interest_read
-//
-//    notr= address_note
-//
-//   button=  //input[@name='commit']
 
 }
