@@ -41,11 +41,20 @@ public class PassionTeaSteps extends BrowserUtils{
     }
     @Then("The user should provide payment information")
     public void the_user_should_provide_payment_information(List<List<String>> dataTable) {
+        PassionTea passionTea = new PassionTea();
+        passionTea.setCardType(dataTable.get(1).get(0));
+        passionTea.setCardNumber(dataTable.get(1).get(1));
+        passionTea.setHolderName(dataTable.get(1).get(2));
+        passionTea.setVerifycode(dataTable.get(1).get(3));
+
 
 
     }
     @Then("The user wants to place order")
     public void the_user_wants_to_place_order() {
+
+        PassionTea passionTea = new PassionTea();
+        passionTea.setPlaceOrder();
 
     }
 

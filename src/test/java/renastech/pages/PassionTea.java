@@ -3,6 +3,7 @@ package renastech.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import renastech.utils.BrowserUtils;
 import renastech.utils.ConfigurationsReader;
 import renastech.utils.Driver;
@@ -25,6 +26,47 @@ public class PassionTea extends BrowserUtils {
 
     @FindBy(id = "address")
     private WebElement address;
+
+    @FindBy(id = "card_type")
+    private WebElement cardType;
+
+    @FindBy(id = "card_number")
+    private WebElement number;
+
+    @FindBy(id = "cardholder_name")
+    private WebElement holderName;
+
+    @FindBy(id = "verification_code")
+    private WebElement verifycode;
+
+    @FindBy(xpath = "//button[contains(text(),'Place Order')]")
+    private WebElement placeOrder;
+
+    public void setPlaceOrder(){
+        staticWait(1);
+        placeOrder.click();
+    }
+
+    public void setVerifycode(String code){
+        staticWait(1);
+        verifycode.sendKeys(code);
+    }
+
+    public void setHolderName(String cardHolderName){
+        staticWait(1);
+        holderName.sendKeys(cardHolderName);
+    }
+
+    public void setCardNumber(String cardNumber){
+        staticWait(1);
+        number.sendKeys(cardNumber);
+    }
+
+    public void setCardType(String cardType1){
+        Select select = new Select(cardType);
+        select.selectByVisibleText(cardType1);
+        staticWait(1);
+    }
 
     public void setEmail(String email1){
         staticWait(1);

@@ -170,8 +170,8 @@ Feature:  There will be SmartBear Website Scenarios
           |Name   | erkn             |
           |Address| 123 fake st      |
       Then The user should provide payment information
-        |CardType|CardNum     |CName|VCode |
-        |Visa    |123654789   |erkn |123   |
+        |CardType      |CardNum     |CName|VCode |
+        |Visa          |123654789   |erkn |123   |
       And The user wants to place order
 
 
