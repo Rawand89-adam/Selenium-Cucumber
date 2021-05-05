@@ -61,7 +61,7 @@ public class Addresses extends BrowserUtils {
 //        staticWait(1);
 //        country.click();
 
-        clickAndWait(country);
+      //  clickAndWait(country);
     }
 
     public void setBirthday(String birthdayDate){
@@ -73,7 +73,7 @@ public class Addresses extends BrowserUtils {
         age.sendKeys(age1);
 
 
-        waitEnterText(age,age1);
+   //     waitEnterText(age,age1);
 
 
     }

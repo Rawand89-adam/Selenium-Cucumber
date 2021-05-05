@@ -161,7 +161,8 @@ Feature:  There will be SmartBear Website Scenarios
     And The user wants to create an address
 
 
-    Scenario:
+    @TC_12
+    Scenario: Verify that we can place order
       Given The user wants to navigate to passion tea company
       When The user wants to buy green tea
       Then The user should provide customer information

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         features = "src/test/resources",
-        glue = "/renastech/stepsDefinitions",
+        glue = "/renastech",
         dryRun=false,  //When it is false it is inactive
         tags = "@TC_12"
 

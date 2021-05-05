@@ -23,23 +23,23 @@ public class BrowserUtils extends Driver {
     }
 
 
-    public static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
-
-    public static void clickAndWait(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-    }
-
-    public static void waitEnterText(WebElement element,String text){
-
-        System.out.println("Entering Text as "+ text);
-        wait.until(ExpectedConditions.visibilityOf(element));
-        element.clear();
-        element.sendKeys(text);
-        wait.until(ExpectedConditions.attributeToBe(element,"value", text));
-        System.out.println("Entered Text as "+ text);
-
-
-    }
+//    public static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
+//
+//    public static void clickAndWait(WebElement element){
+//        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+//    }
+//
+//    public static void waitEnterText(WebElement element,String text){
+//
+//        System.out.println("Entering Text as "+ text);
+//        wait.until(ExpectedConditions.visibilityOf(element));
+//        element.clear();
+//        element.sendKeys(text);
+//        wait.until(ExpectedConditions.attributeToBe(element,"value", text));
+//        System.out.println("Entered Text as "+ text);
+//
+//
+//    }
 
          //Sync issue
 

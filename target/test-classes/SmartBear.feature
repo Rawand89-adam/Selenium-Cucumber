@@ -161,10 +161,23 @@ Feature:  There will be SmartBear Website Scenarios
     And The user wants to create an address
 
 
+    @TC_12
+    Scenario: Verify that we can place order
+      Given The user wants to navigate to passion tea company
+      When The user wants to buy green tea
+      Then The user should provide customer information
+          |Email  | erkn@gmail.com   |
+          |Name   | erkn             |
+          |Address| 123 fake st      |
+      Then The user should provide payment information
+        |CardType|CardNum     |CName|VCode |
+        |Visa    |123654789   |erkn |123   |
+      And The user wants to place order
 
-  @TC_12
-  Scenario: Enter all address fields
-    Given The user wants to login abc
+
+
+
+      #  Break till 8.04 pm
 
 
 
