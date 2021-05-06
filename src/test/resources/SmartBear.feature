@@ -176,8 +176,36 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
+
+      @TC_13
+  Scenario: Verify that we can place order
+    Given The user wants to login to practice page
+    When The user wants to buy green tea
+    Then The user should provide customer information
+      |Email  | erkn@gmail.com   |
+      |Name   | erkn             |
+      |Address| 123 fake st      |
+    Then The user should provide payment information
+      |CardType      |CardNum     |CName|VCode |
+      |Visa          |123654789   |erkn |123   |
+    And The user wants to place order
+
+
+
+
+
+
+
+
+
+
+
+
+
       #  Hook
       #  Scenario Outline:
+      #  Driver Class
+      #  Debug
 
 
 

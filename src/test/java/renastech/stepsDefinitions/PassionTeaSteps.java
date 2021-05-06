@@ -60,4 +60,9 @@ public class PassionTeaSteps extends BrowserUtils{
 
 
 
+    @Given("The user wants to login to practice page")
+    public void the_user_wants_to_login_to_practice_page() {
+         System.out.println("We are running with Hooks class");
+    }
+
 }
