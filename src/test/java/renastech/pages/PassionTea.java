@@ -42,6 +42,41 @@ public class PassionTea extends BrowserUtils {
     @FindBy(xpath = "//button[contains(text(),'Place Order')]")
     private WebElement placeOrder;
 
+
+
+    public void enterCustomerInfoForOutline(String email2, String nam2, String address2){
+
+        staticWait(1);
+        email.sendKeys(email2);
+        staticWait(1);
+        name.sendKeys(nam2);
+        staticWait(1);
+        address.sendKeys(address2);
+        staticWait(1);
+
+
+    }
+
+    public void enterPaymentInfoForOutline(String cType, String CNumber, String cName, String vCode){
+        staticWait(1);
+        cardType.sendKeys(cType);
+        staticWait(1);
+        number.sendKeys(CNumber);
+        staticWait(1);
+        holderName.sendKeys(cName);
+        staticWait(1);
+        verifycode.sendKeys(vCode);
+        staticWait(1);
+
+
+    }
+
+
+
+
+
+
+
     public void setPlaceOrder(){
         staticWait(1);
         placeOrder.click();

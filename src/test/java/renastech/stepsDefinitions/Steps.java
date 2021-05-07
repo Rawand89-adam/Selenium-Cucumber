@@ -118,7 +118,7 @@ public class Steps extends BrowserUtils {
         staticWait(1);
 
     }
-    @Then("The user wants to product as {string}")
+    @When("The user wants to product as {string}")
     public void the_user_wants_to_product_as(String familyAlbum) {
 
         WebElement selectDropdown =driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));

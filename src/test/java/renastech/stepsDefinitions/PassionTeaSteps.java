@@ -29,6 +29,12 @@ public class PassionTeaSteps extends BrowserUtils{
         PassionTea passionTea = new PassionTea();
         passionTea.clickCheckout();
     }
+
+    @Given("The user wants to login to practice page")
+    public void the_user_wants_to_login_to_practice_page() {
+        System.out.println("We are running with Hooks class");
+    }
+
     @Then("The user should provide customer information")
     public void the_user_should_provide_customer_information(Map<String,String> dataTable) {
 
@@ -59,10 +65,19 @@ public class PassionTeaSteps extends BrowserUtils{
     }
 
 
+    @Then("The user wants to provide {string} and {string} and {string}")
+    public void the_user_wants_to_provide_and_and(String email, String name, String address) {
 
-    @Given("The user wants to login to practice page")
-    public void the_user_wants_to_login_to_practice_page() {
-         System.out.println("We are running with Hooks class");
+        PassionTea passionTea = new PassionTea();
+        passionTea.enterCustomerInfoForOutline(email,name,address);
+
     }
+    @Then("The user wants to provide payment option as {string} and {string} and {string} and {string}")
+    public void the_user_wants_to_provide_payment_option_as_and_and_and(String cType, String CNumber, String cName, String vCode) {
+
+        PassionTea passionTea = new PassionTea();
+        passionTea.enterPaymentInfoForOutline(cType,CNumber,cName,vCode);
+    }
+
 
 }

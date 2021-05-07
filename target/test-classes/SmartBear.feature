@@ -9,11 +9,14 @@ Feature:  There will be SmartBear Website Scenarios
 #
 
   Background:
-#    Given The user wants to login with username as "Tester" and password as "test"
+  # Given The user wants to login with username as "Tester" and password as "test"
+  #  Given The user wants to login with username as Tester and password as test
+ #   When The user wants to check all orders
+  #  Then The user wants to delete all selected orders
 
 
 
-  @Regression @TC_1  @Smoke
+   @TC_1  @Smoke
   Scenario: Verify that delete all orders
     Given The user wants to login with username as Tester and password as test
     When The user wants to check all orders
@@ -31,7 +34,7 @@ Feature:  There will be SmartBear Website Scenarios
     And The user wants to logout
 
 
-  @Regression   @TC_3
+    @TC_3
   Scenario: Verify that we can edit first order
 #    Given The user wants to login with username as "Tester" and password as "test"
     When The user wants edit first order
@@ -39,15 +42,15 @@ Feature:  There will be SmartBear Website Scenarios
     And The user wants to update order
     And The user wants to logout
 
-    @TC_4
+    @TC_4 @Regression
     Scenario: Verify that the total is correct for FamilyAlbum
       When The user wants to order
-      Then The user wants to product as "FamilyAlbum"
+      When The user wants to product as "FamilyAlbum"
       Then The user wants to buy "10"
       And The user wants to calculate total
       And The user wants to verify total 10 and "FamilyAlbum"
 
-      @TC_5
+      @TC_5 @Regression
       Scenario: Verify that the total is correct for FamilyAlbum
         When The user wants to order
         Then The user wants to enter
@@ -58,7 +61,7 @@ Feature:  There will be SmartBear Website Scenarios
         And The user wants to calculate total
 
 
-        @TC_6
+        @TC_6 @Regression  @Smoke
         Scenario: Verify that the total is correct for FamilyAlbum
           When The user wants to order
           Then The user wants to enter
@@ -82,7 +85,7 @@ Feature:  There will be SmartBear Website Scenarios
            # Write the last step fpr Payment option in a data table
            # add the last scenario
 
-  @TC_7
+  @TC_7 @Regression
   Scenario: Verify that the total is correct for FamilyAlbum
     When The user wants to order
     Then The user wants to enter
@@ -105,7 +108,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-  @TC_8
+  @TC_8 @Regression
   Scenario: Verify that the total is correct for FamilyAlbum
      Given The user wants to login with username as "Tester" and password as "test"
      When The user wants to order
@@ -121,14 +124,14 @@ Feature:  There will be SmartBear Website Scenarios
        #Username erk@gmail.com
        #Password erk@gmail.com
 
-    @TC_9
+    @TC_9 @Regression
     Scenario: Create new address
       Given The user wants to login
       Then The user wants to see addresses
       And The user wants to enter new address
 
 
-         @TC_10
+         @TC_10 @Regression
       Scenario: Enter all address fields
         Given The user wants to login
         Then The user wants to see addresses
@@ -150,7 +153,7 @@ Feature:  There will be SmartBear Website Scenarios
         |Note         | This is my fake address|
         And The user wants to create an address
 
-  @TC_11
+  @TC_11 @Regression
   Scenario: Enter all address fields
     Given The user wants to login
     Then The user wants to see addresses
@@ -161,7 +164,7 @@ Feature:  There will be SmartBear Website Scenarios
     And The user wants to create an address
 
 
-    @TC_12
+    @TC_12 @Regression
     Scenario: Verify that we can place order
       Given The user wants to navigate to passion tea company
       When The user wants to buy green tea
@@ -177,7 +180,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-      @TC_13
+      @TC_13 @Regression
   Scenario: Verify that we can place order
     Given The user wants to login to practice page
     When The user wants to buy green tea
@@ -192,6 +195,18 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
+        @TC_14
+  Scenario Outline:
+    Given The user wants to login to practice page
+    When The user wants to buy green tea
+    Then The user wants to provide "<email>" and "<name>" and "<address>"
+    Then The user wants to provide payment option as "<CardType>" and "<CardNum>" and "<CName>" and "<VCode>"
+    And The user wants to place order
+
+  Examples:
+
+   |email         | name |address    |CardType|CardNum   |CName|VCode|
+   |erkn@gmail.com|erkn  |123 fake st|Visa    |123654789 |erkn |123  |
 
 
 
@@ -206,11 +221,6 @@ Feature:  There will be SmartBear Website Scenarios
       #  Scenario Outline:
       #  Driver Class
       #  Debug
-
-
-
-
-
 
 
 
