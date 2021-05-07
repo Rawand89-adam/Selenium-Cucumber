@@ -92,4 +92,20 @@ public class AddressSteps extends BrowserUtils {
     }
 
 
+    @Then("The user wants to enter address details as {string} and {string} and {string}")
+    public void the_user_wants_to_enter_address_details_as_and_and(String firstName, String lastNAme, String address1) {
+
+    }
+
+
+
+
+
+    @Given("The user wants to login address")
+    public void the_user_wants_to_login_address() {
+         System.out.println("Starting Chrome Driver");
+    }
+
+
+
 }

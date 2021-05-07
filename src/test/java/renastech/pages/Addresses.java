@@ -48,6 +48,18 @@ public class Addresses extends BrowserUtils {
     @FindBy(xpath = "//input[@value='Create Address']")
     private WebElement submitButton;
 
+
+    public void sentInfoOutlineExample(String firstName1, String lastNAme1, String address11){
+        staticWait(1);
+        firstName.sendKeys(firstName1);
+        staticWait(1);
+        lastname.sendKeys(lastNAme1);
+        staticWait(1);
+        address1.sendKeys(address11);
+        staticWait(1);
+
+    }
+
     public void clickSubmitButton(){
         staticWait(1);
         submitButton.click();

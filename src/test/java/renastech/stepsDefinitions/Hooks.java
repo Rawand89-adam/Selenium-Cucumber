@@ -13,12 +13,13 @@ public class Hooks  extends BrowserUtils{
 
     @Before
     public void setup(Scenario scenario){
-
           Driver.getDriver();
           driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-          driver.get(ConfigurationsReader.getProperties("url2"));
+          driver.get(ConfigurationsReader.getProperties("url3"));
 
     }
+
+
 
 
 
