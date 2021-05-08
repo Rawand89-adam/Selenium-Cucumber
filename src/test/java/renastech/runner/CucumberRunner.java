@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "/renastech",
         dryRun=false,  //When it is false it is inactive
-        tags = "@TC_16",
+        tags = "@Smoke",
         plugin = {
                 "html:target/default-cucumber-reports",
                 "json:target/cucumber.json"

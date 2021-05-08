@@ -16,7 +16,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-   @TC_1  @Smoke
+   @TC_1
   Scenario: Verify that delete all orders
     Given The user wants to login with username as Tester and password as test
     When The user wants to check all orders
@@ -26,7 +26,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-  @Regression @TC_2  @Smoke
+  @Regression @TC_2
   Scenario: Verify that delete all orders
     Given The user wants to login with username as "Tester" and password as "test"
     When The user wants to check all orders
@@ -61,7 +61,7 @@ Feature:  There will be SmartBear Website Scenarios
         And The user wants to calculate total
 
 
-        @TC_6 @Regression  @Smoke
+        @TC_6 @Regression
         Scenario: Verify that the total is correct for FamilyAlbum
           When The user wants to order
           Then The user wants to enter
@@ -195,7 +195,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-        @TC_14
+  @Regression     @TC_14
   Scenario Outline:
     Given The user wants to login to practice page
     When The user wants to buy green tea
@@ -237,7 +237,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-  @TC_16
+  @TC_16   @Smoke
   Scenario Outline: Verify that we can order
     Given The user wants to login Smartbear
     Then The user wants to go order page
