@@ -27,9 +27,14 @@ public class SmartBearsSteps {
     @Then("The user wants to enter address info as {string} and {string} and {string} and {string} and {string}")
     public void the_user_wants_to_enter_address_info_as_and_and_and_and(String CName, String street, String city, String state, String zip) {
 
+        SmartBearPage smartBearPage = new SmartBearPage();
+        smartBearPage.setAddressInformation(CName,street,city,state,zip);
+
+
     }
     @Then("The user wants to enter payment information as {string} and {string} and {string}")
     public void the_user_wants_to_enter_payment_information_as_and_and(String CType, String CName, String Expire) {
-
+        SmartBearPage smartBearPage = new SmartBearPage();
+        smartBearPage.setPaymentInformation(CType,CName,Expire);
     }
 }

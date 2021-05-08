@@ -211,9 +211,7 @@ Feature:  There will be SmartBear Website Scenarios
 
 
 
-          # Requirement
-           # convert TC_10 to scenario outline
-                # 5 min
+
 
   @TC_15
   Scenario Outline:  Enter all address fields
@@ -246,12 +244,28 @@ Feature:  There will be SmartBear Website Scenarios
     Then The user wants to enter product info as "<product>" and "<quantity>"
     Then The user wants to enter address info as "<CName>" and "<street>" and "<city>" and "<state>" and "<zip>"
     Then The user wants to enter payment information as "<CType>" and "<CNumber>" and "<Expire>"
+    And The user wants to logout
 
     Examples:
-    |product| quantity| CName| street     |city     |state|zip    |CType       |CNumber    |Expire|
-    |MyMoney| 10      | erk  |12 Fake st  |Toronto  |CO   |123456 |MasterCard  |123456789  |12/25 |
+    |product    | quantity| CName| street     |city     |state|zip    |CType              |CNumber    |Expire|
+    |MyMoney    | 10      | erk  |12 Fake st  |Toronto  |CO   |123456 |MasterCard         |123456789  |12/25 |
+    |FamilyAlbum| 15      | erez |13 Fake st  |Baltimore|MD   |369854 |Visa               |698855522  |12/26 |
+    |MyMoney    | 12      | erk  |12 Fake st  |Toronto  |CO   |123456 |MasterCard         |123456789  |12/25 |
+    |MyMoney    | 13      | erk  |12 Fake st  |Toronto  |CO   |123456 | AmericanExpress   |123456789  |12/25 |
 
 
+
+
+    #Deta Driven Development/Testing
+
+
+
+   # Project from scratch
+     # Pages
+     # Runner
+     # StepsDefinitions
+     # utils
+  # Feature file
 
 
 

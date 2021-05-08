@@ -59,7 +59,7 @@ public class Steps extends BrowserUtils {
         driver.findElement(By.id("ctl00_logout")).click();
         staticWait(2);
 
-        Driver.tearDown();
+       // Driver.tearDown();
 
     }
 
